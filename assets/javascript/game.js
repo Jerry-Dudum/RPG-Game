@@ -70,7 +70,9 @@ for (var i = 0; i < charArray.length; i++) {
 
 var charPicked = false;
 var enemyPicked = false;
-var myEnemies = []
+var myEnemies = [];
+var userCharacter;
+var myOpponent;
 //add more variables as I see what I need
 
 $(document).on("click", ".select", function () {
@@ -79,7 +81,7 @@ $(document).on("click", ".select", function () {
         for (var i = 0; i < charArray.length; i++) {
             if (charArray[i].name === click) {
                 set(charArray[i], "#your-character");
-                charPicked = charArray[i];
+                userCharacter = charArray[i];
             }
             else {
                 myEnemies.push(charArray[i]);
@@ -88,5 +90,22 @@ $(document).on("click", ".select", function () {
         }
         $("#character-select").empty();
         charPicked = true;
+    }
+});
+
+$(document).on("click", ".enemy", function (){
+    if (enemyPicked === false) {
+        $("#enemies").empty();
+        var click = $(this).attr("id");
+        for (var i = 0; i < myEnemies.length; i++) {
+            if (myEnemies[i].name === click) {
+                set(myEnemies[i], "#defender");
+                myOpponent = myEnemies[i];
+            }
+            else {
+                set(myEnemies[i], "#enemies");
+            }
+        }
+        enemyPicked = true; 
     }
 })
