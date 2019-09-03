@@ -108,4 +108,5 @@ $(document).on("click", ".enemy", function (){
         }
         enemyPicked = true; 
     }
-})
+});
+
