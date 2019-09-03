@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-image: url("../images/pokemon-bg.png");
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+header {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
