@@ -21,3 +21,23 @@ header {
     font-size: 40px;
     font-weight: bold;
 }
+
+.titles {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+    color: white;
+    text-shadow:
+        -1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.square {
+    background-color:grey;
+    height: 25px;
+    width: 80px;
+    padding-top: 2px;
+    padding-left: 5px;
+}
