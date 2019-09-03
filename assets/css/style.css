@@ -45,3 +45,21 @@ header {
 .clearfix {
     clear: both;
 }
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+.character {
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    text-shadow:
+        -1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+        1px 1px 0 #000;
+        margin: 0 20px;
+}
