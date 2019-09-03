@@ -44,26 +44,49 @@ function set(char, area) {
 
     $(area).append(charDiv);
 
-    if (area === "#character-select"){
+    if (area === "#character-select") {
         charDiv.addClass("select");
     }
     else {
         charDiv.removeClass("select");
     }
 
-    if (area === "#your-character"){
+    if (area === "#your-character") {
         charDiv.addClass("player");
     }
-   
-    if (area === "#enemies"){
+
+    if (area === "#enemies") {
         charDiv.addClass("enemy");
     }
-   
-    if (area === "#defender"){
+
+    if (area === "#defender") {
         charDiv.addClass("opponent");
     }
 };
 
-for (var i = 0; i < charArray.length; i++){
+for (var i = 0; i < charArray.length; i++) {
     set(charArray[i], "#character-select");
 }
+
+var charPicked = false;
+var enemyPicked = false;
+var myEnemies = []
+//add more variables as I see what I need
+
+$(document).on("click", ".select", function () {
+    if (charPicked === false) {
+        var click = $(this).attr("id");
+        for (var i = 0; i < charArray.length; i++) {
+            if (charArray[i].name === click) {
+                set(charArray[i], "#your-character");
+                charPicked = charArray[i];
+            }
+            else {
+                myEnemies.push(charArray[i]);
+                set(charArray[i], "#enemies");
+            }   
+        }
+        $("#character-select").empty();
+        charPicked = true;
+    }
+})
