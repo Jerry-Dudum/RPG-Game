@@ -3,32 +3,32 @@ var charArray = [
     bulbusaur = {
         name: "Bulbusaur",
         hp: 200,
-        ap: 10,
-        cap: 6,
+        ap: 7,
+        cap: 18,
         image: "assets/images/bulbasaur.png"
     },
 
     charmander = {
         name: "Charmander",
-        hp: 150,
-        ap: 18,
-        cap: 10,
+        hp: 130,
+        ap: 12,
+        cap: 25,
         image: "assets/images/charmander.png"
     },
 
     squirtle = {
         name: "Squirtle",
-        hp: 180,
-        ap: 15,
-        cap: 12,
+        hp: 150,
+        ap: 10,
+        cap: 22,
         image: "assets/images/squirtle.png"
     },
 
     pikachu = {
         name: "Pikachu",
         hp: 120,
-        ap: 20,
-        cap: 30,
+        ap: 15,
+        cap: 28,
         image: "assets/images/pikachu.png"
     }
 
