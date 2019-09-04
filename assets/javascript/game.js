@@ -131,6 +131,7 @@ $(document).on("click", "#attack-button", function (){
             enemyPicked = false;
             wins++;
             if (wins === 3){
+                $("#defense-info").empty();
                 $("#attack-info").text("YOU WON! Refresh to try other characters.");
             }
             else {
@@ -138,6 +139,10 @@ $(document).on("click", "#attack-button", function (){
             }
         }
 
+    }
+    else {
+        $("#attack-info").empty();
+        $("#attack-info").text("Please select a character.")
     }
     round++;
 });
