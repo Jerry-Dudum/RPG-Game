@@ -51,16 +51,8 @@ function set(char, area) {
         charDiv.removeClass("select");
     }
 
-    if (area === "#your-character") {
-        charDiv.addClass("player");
-    }
-
     if (area === "#enemies") {
         charDiv.addClass("enemy");
-    }
-
-    if (area === "#defender") {
-        charDiv.addClass("opponent");
     }
 };
 
@@ -96,6 +88,7 @@ $(document).on("click", ".select", function () {
 });
 
 $(document).on("click", ".enemy", function (){
+    var opponentIndex
     if (enemyPicked === false) {
         $("#enemies").empty();
         var click = $(this).attr("id");
@@ -103,11 +96,13 @@ $(document).on("click", ".enemy", function (){
             if (myEnemies[i].name === click) {
                 set(myEnemies[i], "#defender");
                 myOpponent = myEnemies[i];
+                opponentIndex = i;
             }
             else {
                 set(myEnemies[i], "#enemies");
             }
         }
+        myEnemies.splice(opponentIndex,1);
         enemyPicked = true; 
     }
 });
@@ -146,3 +141,4 @@ $(document).on("click", "#attack-button", function (){
     }
     round++;
 });
+
