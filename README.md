@@ -17,5 +17,5 @@
 A simple Pokemon styled RPG game where you select a character then have to defeat all the enemies. Practicing newly learned jQuery to complete this website.
 
 ### Links
-- [Pokemon RPG]()
+- [Pokemon RPG](https://jerry-dudum.github.io/RPG-Game/)
 - [LinkedIn](https://www.linkedin.com/in/jsdudum/)
