@@ -74,6 +74,7 @@ var myEnemies = [];
 var userCharacter;
 var myOpponent;
 var wins = 0;
+var round = 0;
 //add more variables as I see what I need
 
 $(document).on("click", ".select", function () {
@@ -114,8 +115,8 @@ $(document).on("click", ".enemy", function (){
 $(document).on("click", "#attack-button", function (){
     if (enemyPicked === true){
         $("#attack-info").empty();
-        $("#attack-info").text("You attacked " + myOpponent.name + " for " + userCharacter.ap + " damage.");
-        myOpponent.hp = (myOpponent.hp - userCharacter.ap);
+        $("#attack-info").text("You attacked " + myOpponent.name + " for " + (userCharacter.ap + (userCharacter.ap*round)) + " damage.");
+        myOpponent.hp = (myOpponent.hp - (userCharacter.ap + (userCharacter.ap * round)));
 
         if (myOpponent.hp > 0){
             $("#defender").empty();
@@ -143,11 +144,5 @@ $(document).on("click", "#attack-button", function (){
         }
 
     }
-
+    round++;
 });
-
-// may want to incorporate later
-//  else {
-//     $("#attack-info").empty();
-//     $("#attack-info").text("Please choose a defender.");
-// }
