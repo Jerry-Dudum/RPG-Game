@@ -64,3 +64,11 @@ img {
         1px 1px 0 #000;
         margin: 0 20px;
 }
+
+#attack-info {
+    padding-left: 75px;
+}
+
+#defense-info {
+    padding-left: 100px;
+}

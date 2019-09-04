@@ -110,3 +110,32 @@ $(document).on("click", ".enemy", function (){
     }
 });
 
+$(document).on("click", "#attack-button", function (){
+    if (enemyPicked === true){
+        $("#attack-info").empty();
+        $("#attack-info").text("You attacked " + myOpponent.name + " for " + userCharacter.ap + " damage.");
+        myOpponent.hp = (myOpponent.hp - userCharacter.ap);
+
+        if (myOpponent.hp > 0){
+            $("#defender").empty();
+            set(myOpponent, "#defender");
+            $("#defense-info").text(myOpponent.name + " attacked you for " + myOpponent.cap + " damage.");
+            userCharacter.hp = userCharacter.hp - myOpponent.cap;
+            $("#your-character").empty();
+            set(userCharacter, "#your-character");
+
+            if (userCharacter.hp <= 0){
+                $("#attack-button").remove();
+                $("#attack-info").text("Please refresh the page to try again!");
+            }
+        }
+
+    }
+
+});
+
+// may want to incorporate later
+//  else {
+//     $("#attack-info").empty();
+//     $("#attack-info").text("Please choose a defender.");
+// }
