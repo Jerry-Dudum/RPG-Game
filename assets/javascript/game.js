@@ -132,6 +132,7 @@ $(document).on("click", "#attack-button", function (){
             wins++;
             if (wins === 3){
                 $("#defense-info").empty();
+                $("#attack-button").remove();
                 $("#attack-info").text("YOU WON! Refresh to try other characters.");
             }
             else {
