@@ -73,6 +73,7 @@ var enemyPicked = false;
 var myEnemies = [];
 var userCharacter;
 var myOpponent;
+var wins = 0;
 //add more variables as I see what I need
 
 $(document).on("click", ".select", function () {
@@ -127,6 +128,16 @@ $(document).on("click", "#attack-button", function (){
             if (userCharacter.hp <= 0){
                 $("#attack-button").remove();
                 $("#attack-info").text("Please refresh the page to try again!");
+            }
+        }
+        else {
+            $("#defender").empty();
+            wins++;
+            if (wins === 3){
+                $("#attack-info").text("YOU WON! Refresh to try other characters.");
+            }
+            else {
+                $("#defense-info").text(myOpponent.name + " was defeated select another opponent!");
             }
         }
 
